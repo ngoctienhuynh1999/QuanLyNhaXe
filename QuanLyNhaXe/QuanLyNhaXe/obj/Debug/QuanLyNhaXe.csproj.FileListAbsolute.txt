@@ -1,0 +1,11 @@
+C:\Users\Admin\source\repos\QuanLyNhaXe\QuanLyNhaXe\bin\Debug\QuanLyNhaXe.exe.config
+C:\Users\Admin\source\repos\QuanLyNhaXe\QuanLyNhaXe\bin\Debug\QuanLyNhaXe.exe
+C:\Users\Admin\source\repos\QuanLyNhaXe\QuanLyNhaXe\bin\Debug\QuanLyNhaXe.pdb
+C:\Users\Admin\source\repos\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.Form1.resources
+C:\Users\Admin\source\repos\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.Form2.resources
+C:\Users\Admin\source\repos\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.Properties.Resources.resources
+C:\Users\Admin\source\repos\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.exe
+C:\Users\Admin\source\repos\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.pdb
