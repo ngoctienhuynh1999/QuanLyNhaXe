@@ -9,3 +9,26 @@ C:\Users\Admin\source\repos\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.csproj
 C:\Users\Admin\source\repos\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.exe
 C:\Users\Admin\source\repos\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.pdb
+C:\Users\admin\Desktop\New folder\QuanLyNhaXe-master\QuanLyNhaXe-master\QuanLyNhaXe\QuanLyNhaXe\bin\Debug\QuanLyNhaXe.exe.config
+C:\Users\admin\Desktop\New folder\QuanLyNhaXe-master\QuanLyNhaXe-master\QuanLyNhaXe\QuanLyNhaXe\bin\Debug\QuanLyNhaXe.exe
+C:\Users\admin\Desktop\New folder\QuanLyNhaXe-master\QuanLyNhaXe-master\QuanLyNhaXe\QuanLyNhaXe\bin\Debug\QuanLyNhaXe.pdb
+C:\Users\admin\Desktop\New folder\QuanLyNhaXe-master\QuanLyNhaXe-master\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\New folder\QuanLyNhaXe-master\QuanLyNhaXe-master\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.Form1.resources
+C:\Users\admin\Desktop\New folder\QuanLyNhaXe-master\QuanLyNhaXe-master\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.Form2.resources
+C:\Users\admin\Desktop\New folder\QuanLyNhaXe-master\QuanLyNhaXe-master\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.Properties.Resources.resources
+C:\Users\admin\Desktop\New folder\QuanLyNhaXe-master\QuanLyNhaXe-master\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.csproj.GenerateResource.cache
+C:\Users\admin\Desktop\New folder\QuanLyNhaXe-master\QuanLyNhaXe-master\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\New folder\QuanLyNhaXe-master\QuanLyNhaXe-master\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.exe
+C:\Users\admin\Desktop\New folder\QuanLyNhaXe-master\QuanLyNhaXe-master\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.pdb
+C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\bin\Debug\QuanLyNhaXe.exe.config
+C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\bin\Debug\QuanLyNhaXe.exe
+C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\bin\Debug\QuanLyNhaXe.pdb
+C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.Properties.Resources.resources
+C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.exe
+C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.pdb
+C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.FormLogin.resources
+C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.FormVeXe.resources
+C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.FormApp.resources
