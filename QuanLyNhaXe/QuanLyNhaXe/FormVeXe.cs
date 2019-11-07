@@ -55,9 +55,29 @@ namespace QuanLyNhaXe
         private void TrangChínhToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormApp formApp = new FormApp();
+            MessageBox.Show(user, "Thông Báo", MessageBoxButtons.OK);
             formApp.user = user;
             this.Hide();
             formApp.ShowDialog();
+            this.Close();
+        }
+
+        
+
+        private void ĐăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLogin formLogin = new FormLogin();
+            this.Hide();
+            formLogin.ShowDialog();
+            this.Close();
+        }
+
+        private void ThayĐổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAccount formAccount = new FormAccount();
+            formAccount.user = user;
+            this.Hide();
+            formAccount.ShowDialog();
             this.Close();
         }
     }
