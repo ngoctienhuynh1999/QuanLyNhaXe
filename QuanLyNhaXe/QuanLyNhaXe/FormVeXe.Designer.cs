@@ -201,6 +201,7 @@
             this.btnThemVe.TabIndex = 19;
             this.btnThemVe.Text = "Thêm";
             this.btnThemVe.UseVisualStyleBackColor = true;
+            this.btnThemVe.Click += new System.EventHandler(this.BtnThemVe_Click);
             // 
             // btnHuyVe
             // 
@@ -210,6 +211,7 @@
             this.btnHuyVe.TabIndex = 20;
             this.btnHuyVe.Text = "Hủy";
             this.btnHuyVe.UseVisualStyleBackColor = true;
+            this.btnHuyVe.Click += new System.EventHandler(this.BtnHuyVe_Click);
             // 
             // btnUpdateVe
             // 
@@ -286,14 +288,14 @@
             // thayĐổiMậtKhẩuToolStripMenuItem
             // 
             this.thayĐổiMậtKhẩuToolStripMenuItem.Name = "thayĐổiMậtKhẩuToolStripMenuItem";
-            this.thayĐổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.thayĐổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.thayĐổiMậtKhẩuToolStripMenuItem.Text = "Thay Đổi Mật Khẩu";
             this.thayĐổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.ThayĐổiMậtKhẩuToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.ĐăngXuấtToolStripMenuItem_Click);
             // 

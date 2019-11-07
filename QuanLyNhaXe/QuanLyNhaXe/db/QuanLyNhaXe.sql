@@ -23,7 +23,7 @@ create table KhachHang(
 insert into KhachHang values('KH01','Huynh Ngoc Tien','0902895176');  
  
 create table VeXe(
-	MaVe varchar(10) PRIMARY KEY,
+	MaVe int IDENTITY(1,1) PRIMARY KEY,
 	TenKH nvarchar(50),
 	SoGhe int,
 	SoXe int,
@@ -34,6 +34,6 @@ create table VeXe(
 	GiaVe int,
 )
 
-insert into VeXe values('VX01','Tien',15,13,'TP.HCM','Ha Noi','7/11/2019','13:30',90000);
+insert into VeXe values('Tien',15,13,'TP.HCM','Ha Noi','7/11/2019','13:30',90000);
 
 

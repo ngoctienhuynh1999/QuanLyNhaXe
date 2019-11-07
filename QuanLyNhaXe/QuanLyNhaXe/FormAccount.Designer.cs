@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAccount));
             this.btnHuy = new System.Windows.Forms.Button();
             this.lblPass = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@
             this.btnHuy.TabIndex = 13;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.BtnHuy_Click);
             // 
             // lblPass
             // 
@@ -88,6 +90,7 @@
             this.btnThayMatKhau.TabIndex = 12;
             this.btnThayMatKhau.Text = "Đổi Mật Khẩu";
             this.btnThayMatKhau.UseVisualStyleBackColor = true;
+            this.btnThayMatKhau.Click += new System.EventHandler(this.BtnThayMatKhau_Click);
             // 
             // txtRePass
             // 
@@ -119,8 +122,10 @@
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.lblPass);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAccount";
             this.Text = "FormAccount";
+            this.Load += new System.EventHandler(this.FormAccount_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

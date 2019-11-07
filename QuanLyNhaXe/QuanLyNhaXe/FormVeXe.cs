@@ -26,7 +26,6 @@ namespace QuanLyNhaXe
             SqlConnection conn = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
             SqlCommand cmd = new SqlCommand("select * from VeXe", conn);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-
             DataTable table = new DataTable();
             adapter.Fill(table);
             conn.Close();
@@ -55,14 +54,33 @@ namespace QuanLyNhaXe
         private void TrangChínhToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormApp formApp = new FormApp();
-            MessageBox.Show(user, "Thông Báo", MessageBoxButtons.OK);
             formApp.user = user;
             this.Hide();
             formApp.ShowDialog();
             this.Close();
+        } 
+
+        private void BtnThemVe_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
+            SqlCommand cmd = new SqlCommand("insert into VeXe values('"+txtTenKH.Text+"',"+txtSoGhe.Text+","+txtSoXe.Text+",'"+txtDiemDi.Text+"','"+txtDiemDen.Text+"','"+dtNgayDi.Value+"','"+txtGioKhoiHanh.Text+"',90000);", conn);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            LoadData();
+            conn.Close();  
         }
 
-        
+        private void BtnHuyVe_Click(object sender, EventArgs e)
+        {
+            txtTenKH.Text = "";
+            txtSoGhe.Text = "";
+            txtSoXe.Text = "";
+            txtDiemDi.Text = "";
+            txtDiemDen.Text = "";
+            txtGioKhoiHanh.Text = "";
+            txtTenKH.Focus();
+        }
 
         private void ĐăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -80,5 +98,7 @@ namespace QuanLyNhaXe
             formAccount.ShowDialog();
             this.Close();
         }
+
+        
     }
 }
