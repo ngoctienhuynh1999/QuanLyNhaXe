@@ -15,12 +15,12 @@ insert into tbl_Login values(2,'NhanVienKyThuat','456','nhanvienkythuat');
 select * from tbl_Login
 
 create table KhachHang(
-	MaKH nvarchar(50) primary key,
+	MaKH int IDENTITY(1,1) PRIMARY KEY,
 	TenKH nvarchar(50),
 	SDT varchar(10),
 )
 
-insert into KhachHang values('KH01','Huynh Ngoc Tien','0902895176');  
+insert into KhachHang values('Huynh Ngoc Tien','0902895176');  
  
 create table VeXe(
 	MaVe int IDENTITY(1,1) PRIMARY KEY,
@@ -33,7 +33,10 @@ create table VeXe(
 	GioKhoiHanh nvarchar(5), 
 	GiaVe int,
 )
+drop table VeXe
 
 insert into VeXe values('Tien',15,13,'TP.HCM','Ha Noi','7/11/2019','13:30',90000);
+
+Update VeXe set GioKhoiHanh='20:30' where TenKH = 'Tien'
 
 

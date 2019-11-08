@@ -33,24 +33,6 @@ namespace QuanLyNhaXe
             gridVeXe.DataSource = table;
         }
 
-        private void GridVeXe_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = this.gridVeXe.Rows[e.RowIndex];
-
-                txtTenKH.Text = row.Cells["TenKH"].Value.ToString();
-                txtDiemDi.Text = row.Cells["DiemDi"].Value.ToString();
-                txtDiemDen.Text = row.Cells["DiemDen"].Value.ToString();
-                dtNgayDi.Value = Convert.ToDateTime(row.Cells["NgayDi"].Value);
-                txtGioKhoiHanh.Text = row.Cells["GioKhoiHanh"].Value.ToString();
-                txtSoXe.Text = row.Cells["SoXe"].Value.ToString();
-                txtSoGhe.Text = row.Cells["SoGhe"].Value.ToString();
-
-                btnThemVe.Enabled = !Enabled;
-            }
-        }
-
         private void TrangChínhToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormApp formApp = new FormApp();
@@ -99,6 +81,46 @@ namespace QuanLyNhaXe
             this.Close();
         }
 
-        
+        private void GridVeXe_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.gridVeXe.Rows[e.RowIndex];
+
+                txtTenKH.Text = row.Cells["TenKH"].Value.ToString();
+                txtDiemDi.Text = row.Cells["DiemDi"].Value.ToString();
+                txtDiemDen.Text = row.Cells["DiemDen"].Value.ToString();
+                dtNgayDi.Value = Convert.ToDateTime(row.Cells["NgayDi"].Value);
+                txtGioKhoiHanh.Text = row.Cells["GioKhoiHanh"].Value.ToString();
+                txtSoXe.Text = row.Cells["SoXe"].Value.ToString();
+                txtSoGhe.Text = row.Cells["SoGhe"].Value.ToString();
+            }
+        }
+
+        private void BtnUpdateVe_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
+            DataGridViewRow row = gridVeXe.Rows[gridVeXe.SelectedCells[0].RowIndex];
+            int id = Convert.ToInt32(row.Cells[0].Value.ToString());
+            SqlCommand cmd = new SqlCommand("Update VeXe set TenKH='"+txtTenKH.Text+"',SoGhe=" + txtSoGhe.Text + ",SoXe="+txtSoXe.Text+",DiemDi='" + txtDiemDi.Text + "',DiemDen='" + txtDiemDen.Text + "',NgayDi='" + dtNgayDi.Value + "',GioKhoiHanh='" + txtGioKhoiHanh.Text + "' where MaVe ="+id+"", conn);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            LoadData();
+            conn.Close();
+        }
+
+        private void BtnXoaVe_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
+            DataGridViewRow row = gridVeXe.Rows[gridVeXe.SelectedCells[0].RowIndex];
+            int id = Convert.ToInt32(row.Cells[0].Value.ToString());
+            SqlCommand cmd = new SqlCommand("Delete from VeXe where MaVe =" + id + "", conn);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            LoadData();
+            conn.Close();
+        }
     }
 }

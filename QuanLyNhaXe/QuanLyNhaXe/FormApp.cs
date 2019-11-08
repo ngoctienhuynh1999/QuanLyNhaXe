@@ -17,6 +17,7 @@ namespace QuanLyNhaXe
         public FormApp()
         {
             InitializeComponent();
+
         }
 
         public void BtnQLVeXe_Click(object sender, EventArgs e)
@@ -29,6 +30,7 @@ namespace QuanLyNhaXe
             sda.Fill(dtbl);
             if (dtbl.Rows.Count == 1)
             {
+      
                 FormVeXe formVeXe= new FormVeXe();
                 formVeXe.user = user;
                 this.Hide();
@@ -51,10 +53,54 @@ namespace QuanLyNhaXe
             sda.Fill(dtbl);
             if (dtbl.Rows.Count == 1)
             {
-                FormVeXe formVeXe = new FormVeXe();
-                formVeXe.user = user;
+                FormXe formXe = new FormXe();
+                //formXe.user = user;
                 this.Hide();
-                formVeXe.ShowDialog();
+                formXe.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Bạn Không Có Quyền Để Truy Cập", "Thông Báo", MessageBoxButtons.OK);
+            }
+        }
+
+        private void BtnQLLoTrinh_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlcon = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
+
+            string query = "Select * from tbl_Login where role='nhanviendieutiet'and username ='" + user + "'";
+            SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+            if (dtbl.Rows.Count == 1)
+            {
+                FormLoTrinh formLoTrinh = new FormLoTrinh();
+                //formXe.user = user;
+                this.Hide();
+                formLoTrinh.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Bạn Không Có Quyền Để Truy Cập", "Thông Báo", MessageBoxButtons.OK);
+            }
+        }
+
+        private void BtnQLNhanVien_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlcon = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
+
+            string query = "Select * from tbl_Login where role='nhanviendieutiet'and username ='" + user + "'";
+            SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+            if (dtbl.Rows.Count == 1)
+            {
+                FormNhanVien formNhanVien = new FormNhanVien();
+                //formXe.user = user;
+                this.Hide();
+                formNhanVien.ShowDialog();
                 this.Close();
             }
             else
@@ -84,6 +130,8 @@ namespace QuanLyNhaXe
             }
         }
 
+
+
         private void ThayĐổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormAccount formAccount = new FormAccount();
@@ -100,5 +148,12 @@ namespace QuanLyNhaXe
             formLogin.ShowDialog();
             this.Close();
         }
+
+        private void FormApp_Load(object sender, EventArgs e)
+        {
+            btnQLXe.Dispose();
+        }
+
+        
     }
 }

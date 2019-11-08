@@ -33,3 +33,4 @@ C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.FormLogin.r
 C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.FormVeXe.resources
 C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.FormApp.resources
 C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.FormAccount.resources
+C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.FormXe.resources
