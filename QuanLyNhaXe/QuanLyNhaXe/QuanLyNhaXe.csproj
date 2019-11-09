@@ -70,6 +70,12 @@
     <Compile Include="FormLoTrinh.Designer.cs">
       <DependentUpon>FormLoTrinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNewAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNewAccount.Designer.cs">
+      <DependentUpon>FormNewAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLoTrinh.resx">
+      <DependentUpon>FormLoTrinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewAccount.resx">
+      <DependentUpon>FormNewAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNhanVien.resx">
+      <DependentUpon>FormNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVeXe.resx">
       <DependentUpon>FormVeXe.cs</DependentUpon>

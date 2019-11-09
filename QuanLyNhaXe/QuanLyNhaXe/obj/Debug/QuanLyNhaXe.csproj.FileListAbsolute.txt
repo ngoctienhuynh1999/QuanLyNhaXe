@@ -34,3 +34,6 @@ C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.FormVeXe.re
 C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.FormApp.resources
 C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.FormAccount.resources
 C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.FormXe.resources
+C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.FormLoTrinh.resources
+C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.FormNhanVien.resources
+C:\Users\Admin\Desktop\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.FormNewAccount.resources

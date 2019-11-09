@@ -61,9 +61,117 @@ namespace QuanLyNhaXe
 
         private void BtnHuy_Click(object sender, EventArgs e)
         {
-            txtPass.Text = "";
-            txtRePass.Text = "";
-            txtPass.Focus();
+            FormApp formApp = new FormApp();
+            formApp.user = user;
+            this.Hide();
+            formApp.ShowDialog();
+            this.Close();
+        }
+
+        private void TrangChínhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormApp formApp = new FormApp();
+            formApp.user = user;
+            this.Hide();
+            formApp.ShowDialog();
+            this.Close();
+        }
+
+        private void QuảnLýVéXeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlcon = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
+
+            string query = "Select * from tbl_Login where (role='nhanvienve'and username ='" + user + "') or (role='admin'and username ='" + user + "')";
+            SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+            if (dtbl.Rows.Count == 1)
+            {
+
+                FormVeXe formVeXe = new FormVeXe();
+                formVeXe.user = user;
+                this.Hide();
+                formVeXe.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Bạn Không Có Quyền Để Truy Cập", "Thông Báo", MessageBoxButtons.OK);
+            }
+        }
+
+        private void QuảnLýXeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlcon = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
+
+            string query = "Select * from tbl_Login where (role='nhanvienkythuat'and username ='" + user + "') or (role='admin'and username ='" + user + "')";
+            SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+            if (dtbl.Rows.Count == 1)
+            {
+                FormXe formXe = new FormXe();
+                formXe.user = user;
+                this.Hide();
+                formXe.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Bạn Không Có Quyền Để Truy Cập", "Thông Báo", MessageBoxButtons.OK);
+            }
+        }
+
+        private void QuảnLýLộTrìnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlcon = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
+
+            string query = "Select * from tbl_Login where (role='nhanvienlotrinh'and username ='" + user + "') or (role='admin'and username ='" + user + "')";
+            SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+            if (dtbl.Rows.Count == 1)
+            {
+                FormLoTrinh formLoTrinh = new FormLoTrinh();
+                formLoTrinh.user = user;
+                this.Hide();
+                formLoTrinh.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Bạn Không Có Quyền Để Truy Cập", "Thông Báo", MessageBoxButtons.OK);
+            }
+        }
+
+        private void QuảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlcon = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
+
+            string query = "Select * from tbl_Login where (role='nhanviennhansu'and username ='" + user + "') or (role='admin'and username ='" + user + "')";
+            SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+            if (dtbl.Rows.Count == 1)
+            {
+                FormNhanVien formNhanVien = new FormNhanVien();
+                formNhanVien.user = user;
+                this.Hide();
+                formNhanVien.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Bạn Không Có Quyền Để Truy Cập", "Thông Báo", MessageBoxButtons.OK);
+            }
+        }
+
+        private void ĐăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLogin formLogin = new FormLogin();
+            this.Hide();
+            formLogin.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -24,7 +24,7 @@ namespace QuanLyNhaXe
         {
             SqlConnection sqlcon = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
 
-            string query = "Select * from tbl_Login where role='nhanvienve'and username ='" + user + "'";
+            string query = "Select * from tbl_Login where (role='nhanvienve'and username ='" + user + "') or (role='admin'and username ='" + user + "')";
             SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
@@ -47,14 +47,14 @@ namespace QuanLyNhaXe
         {
             SqlConnection sqlcon = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
 
-            string query = "Select * from tbl_Login where role='nhanvienkythuat'and username ='" + user + "'";
+            string query = "Select * from tbl_Login where (role='nhanvienkythuat'and username ='" + user + "') or (role='admin'and username ='" + user + "')";
             SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
             if (dtbl.Rows.Count == 1)
             {
                 FormXe formXe = new FormXe();
-                //formXe.user = user;
+                formXe.user = user;
                 this.Hide();
                 formXe.ShowDialog();
                 this.Close();
@@ -69,14 +69,14 @@ namespace QuanLyNhaXe
         {
             SqlConnection sqlcon = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
 
-            string query = "Select * from tbl_Login where role='nhanviendieutiet'and username ='" + user + "'";
+            string query = "Select * from tbl_Login where (role='nhanvienlotrinh'and username ='" + user + "') or (role='admin'and username ='" + user + "')";
             SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
             if (dtbl.Rows.Count == 1)
             {
                 FormLoTrinh formLoTrinh = new FormLoTrinh();
-                //formXe.user = user;
+                formLoTrinh.user = user;
                 this.Hide();
                 formLoTrinh.ShowDialog();
                 this.Close();
@@ -91,14 +91,14 @@ namespace QuanLyNhaXe
         {
             SqlConnection sqlcon = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
 
-            string query = "Select * from tbl_Login where role='nhanviendieutiet'and username ='" + user + "'";
+            string query = "Select * from tbl_Login where (role='nhanviennhansu'and username ='" + user + "') or (role='admin'and username ='" + user + "')";
             SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
             if (dtbl.Rows.Count == 1)
             {
                 FormNhanVien formNhanVien = new FormNhanVien();
-                //formXe.user = user;
+                formNhanVien.user = user;
                 this.Hide();
                 formNhanVien.ShowDialog();
                 this.Close();
@@ -112,12 +112,14 @@ namespace QuanLyNhaXe
         private void QuảnLýVéXeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SqlConnection sqlcon = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
-            string query = "Select * from tbl_Login where role='nhanvienve'and username ='" + user + "'";
+
+            string query = "Select * from tbl_Login where (role='nhanvienve'and username ='" + user + "') or (role='admin'and username ='" + user + "')";
             SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
             if (dtbl.Rows.Count == 1)
             {
+
                 FormVeXe formVeXe = new FormVeXe();
                 formVeXe.user = user;
                 this.Hide();
@@ -130,8 +132,71 @@ namespace QuanLyNhaXe
             }
         }
 
+        private void QuảnLýXeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlcon = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
 
+            string query = "Select * from tbl_Login where (role='nhanvienkythuat'and username ='" + user + "') or (role='admin'and username ='" + user + "')";
+            SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+            if (dtbl.Rows.Count == 1)
+            {
+                FormXe formXe = new FormXe();
+                formXe.user = user;
+                this.Hide();
+                formXe.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Bạn Không Có Quyền Để Truy Cập", "Thông Báo", MessageBoxButtons.OK);
+            }
+        }
 
+        private void QuảnLýLộTrìnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlcon = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
+
+            string query = "Select * from tbl_Login where (role='nhanvienlotrinh'and username ='" + user + "') or (role='admin'and username ='" + user + "')";
+            SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+            if (dtbl.Rows.Count == 1)
+            {
+                FormLoTrinh formLoTrinh = new FormLoTrinh();
+                formLoTrinh.user = user;
+                this.Hide();
+                formLoTrinh.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Bạn Không Có Quyền Để Truy Cập", "Thông Báo", MessageBoxButtons.OK);
+            }
+        }
+
+        private void QuảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlcon = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
+
+            string query = "Select * from tbl_Login where (role='nhanviennhansu'and username ='" + user + "') or (role='admin'and username ='" + user + "')";
+            SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+            if (dtbl.Rows.Count == 1)
+            {
+                FormNhanVien formNhanVien = new FormNhanVien();
+                formNhanVien.user = user;
+                this.Hide();
+                formNhanVien.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Bạn Không Có Quyền Để Truy Cập", "Thông Báo", MessageBoxButtons.OK);
+            }
+        }
         private void ThayĐổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormAccount formAccount = new FormAccount();
@@ -151,9 +216,26 @@ namespace QuanLyNhaXe
 
         private void FormApp_Load(object sender, EventArgs e)
         {
-            btnQLXe.Dispose();
+            SqlConnection sqlcon = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
+
+            string query = "Select * from tbl_Login where role='admin'and username ='" + user + "'";
+            SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+            if (dtbl.Rows.Count != 1)
+            {
+                thêmTàiKhoảnToolStripMenuItem.Dispose();
+            }
+            
         }
 
-        
+        private void ThêmTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormNewAccount formNewAccount = new FormNewAccount();
+            formNewAccount.user = user;
+            this.Hide();
+            formNewAccount.ShowDialog();
+            this.Close();
+        }
     }
 }

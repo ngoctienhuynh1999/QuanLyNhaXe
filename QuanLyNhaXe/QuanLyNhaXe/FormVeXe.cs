@@ -33,14 +33,22 @@ namespace QuanLyNhaXe
             gridVeXe.DataSource = table;
         }
 
-        private void TrangChínhToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void GridVeXe_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            FormApp formApp = new FormApp();
-            formApp.user = user;
-            this.Hide();
-            formApp.ShowDialog();
-            this.Close();
-        } 
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.gridVeXe.Rows[e.RowIndex];
+
+                txtTenKH.Text = row.Cells["TenKH"].Value.ToString();
+                txtDiemDi.Text = row.Cells["DiemDi"].Value.ToString();
+                txtDiemDen.Text = row.Cells["DiemDen"].Value.ToString();
+                dtNgayDi.Value = Convert.ToDateTime(row.Cells["NgayDi"].Value);
+                txtGioKhoiHanh.Text = row.Cells["GioKhoiHanh"].Value.ToString();
+                txtSoXe.Text = row.Cells["SoXe"].Value.ToString();
+                txtSoGhe.Text = row.Cells["SoGhe"].Value.ToString();
+            }
+        }
 
         private void BtnThemVe_Click(object sender, EventArgs e)
         {
@@ -62,39 +70,6 @@ namespace QuanLyNhaXe
             txtDiemDen.Text = "";
             txtGioKhoiHanh.Text = "";
             txtTenKH.Focus();
-        }
-
-        private void ĐăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormLogin formLogin = new FormLogin();
-            this.Hide();
-            formLogin.ShowDialog();
-            this.Close();
-        }
-
-        private void ThayĐổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormAccount formAccount = new FormAccount();
-            formAccount.user = user;
-            this.Hide();
-            formAccount.ShowDialog();
-            this.Close();
-        }
-
-        private void GridVeXe_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = this.gridVeXe.Rows[e.RowIndex];
-
-                txtTenKH.Text = row.Cells["TenKH"].Value.ToString();
-                txtDiemDi.Text = row.Cells["DiemDi"].Value.ToString();
-                txtDiemDen.Text = row.Cells["DiemDen"].Value.ToString();
-                dtNgayDi.Value = Convert.ToDateTime(row.Cells["NgayDi"].Value);
-                txtGioKhoiHanh.Text = row.Cells["GioKhoiHanh"].Value.ToString();
-                txtSoXe.Text = row.Cells["SoXe"].Value.ToString();
-                txtSoGhe.Text = row.Cells["SoGhe"].Value.ToString();
-            }
         }
 
         private void BtnUpdateVe_Click(object sender, EventArgs e)
@@ -121,6 +96,98 @@ namespace QuanLyNhaXe
             adapter.Fill(table);
             LoadData();
             conn.Close();
+        }
+
+        private void TrangChínhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormApp formApp = new FormApp();
+            formApp.user = user;
+            this.Hide();
+            formApp.ShowDialog();
+            this.Close();
+        }
+
+        private void QuảnLýXeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlcon = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
+
+            string query = "Select * from tbl_Login where (role='nhanvienkythuat'and username ='" + user + "') or (role='admin'and username ='" + user + "')";
+            SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+            if (dtbl.Rows.Count == 1)
+            {
+                FormXe formXe = new FormXe();
+                formXe.user = user;
+                this.Hide();
+                formXe.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Bạn Không Có Quyền Để Truy Cập", "Thông Báo", MessageBoxButtons.OK);
+            }
+        }
+
+        private void QuảnLýLộTrìnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlcon = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
+
+            string query = "Select * from tbl_Login where (role='nhanvienlotrinh'and username ='" + user + "') or (role='admin'and username ='" + user + "')";
+            SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+            if (dtbl.Rows.Count == 1)
+            {
+                FormLoTrinh formLoTrinh = new FormLoTrinh();
+                formLoTrinh.user = user;
+                this.Hide();
+                formLoTrinh.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Bạn Không Có Quyền Để Truy Cập", "Thông Báo", MessageBoxButtons.OK);
+            }
+        }
+
+        private void QuảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlcon = new SqlConnection(@"Data Source=TIEN-PC;Initial Catalog=QuanLyNhaXe;User ID=sa;Password=123");
+
+            string query = "Select * from tbl_Login where (role='nhanviennhansu'and username ='" + user + "') or (role='admin'and username ='" + user + "')";
+            SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+            if (dtbl.Rows.Count == 1)
+            {
+                FormNhanVien formNhanVien = new FormNhanVien();
+                formNhanVien.user = user;
+                this.Hide();
+                formNhanVien.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Bạn Không Có Quyền Để Truy Cập", "Thông Báo", MessageBoxButtons.OK);
+            }
+        }
+
+        private void ThayĐổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAccount formAccount = new FormAccount();
+            formAccount.user = user;
+            this.Hide();
+            formAccount.ShowDialog();
+            this.Close();
+        }
+
+        private void ĐăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLogin formLogin = new FormLogin();
+            this.Hide();
+            formLogin.ShowDialog();
+            this.Close();
         }
     }
 }
